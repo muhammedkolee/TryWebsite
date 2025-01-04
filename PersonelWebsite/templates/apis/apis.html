@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3>APIs</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Weather API</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Weather API is a free API that provides weather information for any location in the world. </p>
+                        <a href="{% url 'weather' %}" class="btn btn-primary">View API</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Soccer API</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Football API is a free API that provides soccer data for any league in the world.</p>
+                        <a href="{% url 'soccer' %}" class="btn btn-primary">View API</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Currency API</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Curency API is a free API that provides currency data for USD and EUR.</p>
+                        <a href="{% url 'currency' %}" class="btn btn-primary">View API</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>API Documentation</h4>
+                </div>
+                <div class="card-body">
+                    <p>Your Ip Adress: {{ data }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

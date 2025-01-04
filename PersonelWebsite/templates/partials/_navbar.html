@@ -1,0 +1,21 @@
+<nav class="navbar" >
+    <ul class="nav nav-tabs">
+        <li class="nav-items">
+            <a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'index' %}">Home</a>
+        </li>
+
+        <li class="nav-items">
+            <a class="nav-link {% if 'bmi' in request.path %} active {% endif %}" href="{% url 'bmi' %}">Body Mass Index</a>
+        </li>
+
+        <li class="nav-items">
+            <a class="nav-link" href="{% url 'apis' %}">APIs</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+    </ul>
+</nav>

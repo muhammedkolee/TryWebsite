@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Currency API</h2>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-header">
+                <h4>USD</h4>
+            </div>
+            <div class="card-body">
+                <p>1$ = {{usd}}₺</p>
+                <hr>
+                <p>1€ = {{eur}}₺</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

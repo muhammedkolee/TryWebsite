@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-7 mx-auto">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4>Body Mass Index</h4>
+            </div>
+            <div class="card-body">
+                <form class="row g-3" action="" method="get">
+                    <div class="col-md-6">
+                        <h3 class="text-primary">Height</h3>
+                        <h3>{{ height }}</h3>
+                    </div>
+
+                    <div class="col-md-6 text-end">
+                        <h3 class="text-warning">Weight</h3>
+                        <h3>{{ weight }}</h3>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        {% if bmi <= 18.4 %} <h3 class="text-info text-center">You are underweight.</h3>
+                            <p class="text-center">Your BMI score: {{bmi}}</p>
+                            {% elif bmi > 18.5 and bmi <= 24.9 %} <h3 class="text-success text-center">You are normal
+                                weight.</h3>
+                                <p class="text-center">Your BMI score: {{bmi}}</p>
+                                {% elif bmi > 25 and bmi <= 39.9 %} <h3 class="text-warning text-center">You are
+                                    overweight.</h3>
+                                    <p class="text-center">Your BMI score: {{bmi}}</p>
+                                    {% elif bmi > 40 %}
+                                    <h3 class="text-danger text-center">You are fucking obese.</h3>
+                                    <p class="text-center">Your BMI score: {{bmi}}</p>
+                                    {% else %}
+                                    <h3 class="text-danger">Invalid input.</h3>
+                                    {% endif %}
+                    </div>
+                    <div class="row mx-auto mt-3">
+                        <div class="card col-md-3">
+                            <p class="text-info text-center">Underweight:</p>
+                            <p class="text-center">BMI <= 18.4</p>
+                        </div>
+                        <div class="card col-md-3">
+                            <p class="text-success text-center">Normal Weight:</p>
+                            <p class="text-center">18.5 < BMI <=24.9</p>
+                        </div>
+                        <div class="card col-md-3">
+                            <p class="text-warning text-center"> Overweight:</p>
+                            <p class="text-center">25.0 < BMI 39.9</p>
+                        </div>
+                        <div class="card col-md-3">
+                            <p class="text-danger text-center"> Obese:</p>
+                            <p class="text-center">40 < BMI</p>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mt-2 form-group text-end">
+        <a href="{% url 'bmi' %}" class="btn btn-outline-primary">Re Calculate</a>
+    </div>
+</div>
+{% endblock %}
